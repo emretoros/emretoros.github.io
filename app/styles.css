@@ -85,7 +85,6 @@ h2 { font: 400 clamp(50px, 6.3vw, 92px)/.94 "Instrument Serif", serif; letter-sp
 .teaching { display: grid; grid-template-columns: .7fr 2.3fr; background: var(--paper); }
 .teaching-label { display: flex; flex-direction: column; justify-content: space-between; }
 .monogram { font: 100px/1 "Instrument Serif", serif; opacity: .12; }
-.profile-photo { width: min(230px, 75%); aspect-ratio: 306/385; object-fit: cover; filter: grayscale(12%); }
 .teaching-main h2 em { color: var(--rust); font-weight: 400; }
 .teaching-main > p { max-width: 550px; line-height: 1.7; margin: 45px 0 60px; }
 .course-list { border-top: 1px solid var(--line); }

@@ -12,7 +12,7 @@ const publications = [
     type: "Article",
     title: "Kulturkampf to Partykampf?",
     journal: "South European Society and Politics",
-    text: "With Seçil Toros and Zeynep Gülru Kabakçı. Democratic backsliding and democratic satisfaction in Turkey.",
+    text: "With S. Toros and Z.G. Kabakçı. Democratic backsliding and democratic satisfaction in Turkey.",
     href: "https://doi.org/10.1080/13608746.2025.2573704",
   },
   {
@@ -20,7 +20,7 @@ const publications = [
     type: "Article",
     title: "Bridging the Divide",
     journal: "SAGE Open, 15(3)",
-    text: "With Zeynep Gülru Kabakçı, Büşra Gül Çavdar, and Yasemin Umut Kara. An interdisciplinary analysis of trust in science.",
+    text: "With Z.G. Kabakçı, B.G. Çavdar, and Y.U. Kara. An interdisciplinary analysis of trust in science.",
     href: "https://doi.org/10.1177/21582440251352376",
   },
   {
@@ -28,7 +28,7 @@ const publications = [
     type: "Article",
     title: "From the Ground Up",
     journal: "Political Studies Review",
-    text: "With Muhammed Kara. Political trust and citizen participation in the wake of the Turkey earthquake.",
+    text: "With M. Kara. Political trust and citizen participation in the wake of the Turkey earthquake.",
     href: "https://doi.org/10.1177/14789299251357768",
   },
   {
@@ -133,7 +133,7 @@ export default function Home() {
       <section className="section teaching" id="projects">
         <div className="teaching-label">
           <p className="kicker">Current profile</p>
-          <img className="profile-photo" src="/profile.jpeg" alt="Emre Toros" />
+          <span className="monogram">ET</span>
         </div>
         <div className="teaching-main">
           <h2>Research across<br /><em>institutions & citizens.</em></h2>
