@@ -71,6 +71,8 @@ const videos = [
   ["Electoral Integrity in Turkey: Book Talk", "Istanbul Policy Center", "1QNwFo6ZkOU", "https://www.youtube.com/watch?v=1QNwFo6ZkOU&t=2187s"],
 ];
 
+const featuredVideoIds = new Set(["rkCz0PqEuRk", "jPUpLDYwrZY", "IaZSZFFDliE"]);
+
 const podcasts = [
   ["Turkey between Democracy and Authoritarianism", "Turkey Book Talk · 2024", "https://open.spotify.com/episode/1nA9KiSUKKFTZhzuShFmkY"],
   ["Elections During a Pandemic — Part I", "Oy ve Ötesi Podcast-19 · 2021", "https://open.spotify.com/show/4aVJLglRlhZFbno0ySiWRY"],
@@ -175,7 +177,7 @@ export default function Home() {
         <div className="media-block">
           <div className="media-title"><span>01</span><h3>Watch</h3><p>Video interviews, talks & panels</p></div>
           <div className="video-grid">
-            {videos.map(([title, source, id, href]) => (
+            {videos.filter(([, , id]) => featuredVideoIds.has(id)).map(([title, source, id, href]) => (
               <a className="video-card" href={href} key={id}>
                 <div className="thumb">
                   <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
@@ -185,6 +187,18 @@ export default function Home() {
                 <h4>{title}</h4>
               </a>
             ))}
+          </div>
+          <div className="more-videos">
+            <p className="kicker">More videos</p>
+            <div className="media-list">
+              {videos.filter(([, , id]) => !featuredVideoIds.has(id)).map(([title, source, id, href]) => (
+                <a href={href} key={id}>
+                  <span>{source}</span>
+                  <strong>{title}</strong>
+                  <Arrow />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
