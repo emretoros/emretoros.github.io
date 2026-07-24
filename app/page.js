@@ -55,6 +55,35 @@ const projects = [
   ["2022–2025", "Turkey Trust Research", "TÜBİTAK 1001 · Principal Investigator"],
 ];
 
+const videos = [
+  ["Şunu Bana Bir Anlat", "Mirgün Cabas", "rkCz0PqEuRk", "https://www.youtube.com/watch?v=rkCz0PqEuRk&t=745s"],
+  ["The Post-Covid Society: A Reflection", "International MICE & Wedding Forum", "5xw_s-BZqNw", "https://www.youtube.com/watch?v=5xw_s-BZqNw&t=26s"],
+  ["Social Sciences and Big Data", "Sosyal Bilimlerde Akademik Gelişim", "5BAZs-rdVW8", "https://www.youtube.com/watch?v=5BAZs-rdVW8&t=1033s"],
+  ["Voting & Electoral Management", "Electoral Integrity Project", "YeCPFt2hBkE", "https://www.youtube.com/watch?v=YeCPFt2hBkE&t=12s"],
+  ["The Third-Wave Coffee Movement", "Corporate Stars", "kPMTd0Jx8uY", "https://www.youtube.com/watch?v=kPMTd0Jx8uY"],
+  ["Electoral Integrity in Turkey and Beyond", "Medyascope TV", "jPUpLDYwrZY", "https://www.youtube.com/watch?v=jPUpLDYwrZY&t=1s"],
+  ["Why R? Turkey 2021", "Why R? Turkey", "2oV-NoRsIJ4", "https://www.youtube.com/watch?v=2oV-NoRsIJ4&t=2587s"],
+  ["Data Science and Football", "Alkaralar TV", "fE7sTEccPx0", "https://www.youtube.com/watch?v=fE7sTEccPx0&t=2253s"],
+  ["Big Data: Opportunities and Constraints", "R-Ladies Ankara", "TxBaSHrGjwE", "https://www.youtube.com/watch?v=TxBaSHrGjwE&t=2329s"],
+  ["Local Elections: Special Broadcast", "Cadde TV", "-cIqFEslFrk", "https://www.youtube.com/watch?v=-cIqFEslFrk"],
+  ["Video Appearance", "YouTube", "vVwGLGJ0ieU", "https://www.youtube.com/watch?v=vVwGLGJ0ieU&t=3s"],
+  ["What Do the Numbers Say About the Elections?", "Medyascope TV", "IaZSZFFDliE", "https://www.youtube.com/watch?v=IaZSZFFDliE&t=320s"],
+  ["Electoral Integrity in Turkey: Book Talk", "Istanbul Policy Center", "1QNwFo6ZkOU", "https://www.youtube.com/watch?v=1QNwFo6ZkOU&t=2187s"],
+];
+
+const podcasts = [
+  ["Turkey between Democracy and Authoritarianism", "Turkey Book Talk · 2024", "https://open.spotify.com/episode/1nA9KiSUKKFTZhzuShFmkY"],
+  ["Elections During a Pandemic — Part I", "Oy ve Ötesi Podcast-19 · 2021", "https://open.spotify.com/show/4aVJLglRlhZFbno0ySiWRY"],
+  ["Elections During a Pandemic — Part II", "Oy ve Ötesi Podcast-19 · 2021", "https://open.spotify.com/show/4aVJLglRlhZFbno0ySiWRY"],
+  ["Electoral Integrity and Democracy in Turkey", "Seçmen Ne İster?", "https://www.secmenneister.org/t%C3%BCrkiyede-se%C3%A7imsel-aksakl%C4%B1klar-ve-demokrasi"],
+];
+
+const interviews = [
+  ["Social Media and Political Participation", "Daktilo 1984 · Interview with Seçil Toros and Emre Toros", "https://daktilo1984.com/roportajlar/sosyal-medya-kullanimi-siyasal-katilim-iliskisi-secil-ve-emre-toros-ile-soylesi/"],
+  ["Faculty Q&A: Interview with Emre Toros", "Bilkent News", "https://bilkentnews.bilkent.edu.tr/?p=8569"],
+  ["The 2019 Istanbul Re-Run Election", "Medyascope · Panel coverage", "https://medyascope.tv/2019/07/05/prof-ersin-kalaycioglu-bu-rejim-icerisinde-muhalefetin-23-haziran-secimini-kazanmasi-bir-mucize/"],
+];
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -68,6 +97,7 @@ export default function Home() {
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
+          <a href="#media">Media</a>
           <a className="pill" href="/emre-toros-cv.pdf">Download CV <Arrow /></a>
         </div>
       </nav>
@@ -127,6 +157,53 @@ export default function Home() {
               <span className="pub-arrow"><Arrow /></span>
             </a>
           ))}
+        </div>
+      </section>
+
+      <section className="section media" id="media">
+        <header className="media-head">
+          <div>
+            <p className="kicker">Media & public engagement</p>
+            <h2>Conversations<br />beyond campus.</h2>
+          </div>
+          <p>
+            Interviews, podcasts, and public conversations on elections, political
+            behaviour, data science, and democratic politics.
+          </p>
+        </header>
+
+        <div className="media-block">
+          <div className="media-title"><span>01</span><h3>Watch</h3><p>Video interviews, talks & panels</p></div>
+          <div className="video-grid">
+            {videos.map(([title, source, id, href]) => (
+              <a className="video-card" href={href} key={id}>
+                <div className="thumb">
+                  <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
+                  <span className="play">▶</span>
+                </div>
+                <p>{source}</p>
+                <h4>{title}</h4>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="media-block media-list-block">
+          <div className="media-title"><span>02</span><h3>Listen</h3><p>Podcasts & audio conversations</p></div>
+          <div className="media-list">
+            {podcasts.map(([title, source, href]) => (
+              <a href={href} key={title}><span>{source}</span><strong>{title}</strong><Arrow /></a>
+            ))}
+          </div>
+        </div>
+
+        <div className="media-block media-list-block">
+          <div className="media-title"><span>03</span><h3>Read</h3><p>Interviews & features</p></div>
+          <div className="media-list">
+            {interviews.map(([title, source, href]) => (
+              <a href={href} key={title}><span>{source}</span><strong>{title}</strong><Arrow /></a>
+            ))}
+          </div>
         </div>
       </section>
 
