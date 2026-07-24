@@ -107,8 +107,13 @@ h2 { font: 400 clamp(50px, 6.3vw, 92px)/.94 "Instrument Serif", serif; letter-sp
 .video-card:hover .thumb img { transform: scale(1.025); opacity: 1; }
 .video-card > p { margin: 15px 0 7px; color: var(--rust); text-transform: uppercase; letter-spacing: .1em; font-size: 10px; }
 .video-card h4 { font: 400 25px/1.12 "Instrument Serif", serif; margin: 0; }
-.more-videos { margin-top: 70px; display: grid; grid-template-columns: 1fr 2fr; gap: 5vw; align-items: start; }
-.more-videos > .kicker { margin: 4px 0 0; }
+.more-videos { margin-top: 60px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.more-videos summary { padding: 22px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 13px; list-style: none; }
+.more-videos summary::-webkit-details-marker { display: none; }
+.more-videos summary span { font-size: 20px; transition: transform .2s ease; }
+.more-videos[open] summary span { transform: rotate(45deg); }
+.more-videos-inner { padding: 24px 0 45px; display: grid; grid-template-columns: 1fr 2fr; gap: 5vw; align-items: start; }
+.more-videos-inner > .kicker { margin: 4px 0 0; }
 .media-list-block { display: grid; grid-template-columns: 1fr 2fr; gap: 5vw; }
 .media-list-block .media-title { display: grid; grid-template-columns: 45px 1fr; margin: 0; align-content: start; }
 .media-list-block .media-title p { grid-column: 2; margin-top: 10px; }
@@ -145,7 +150,8 @@ footer h2 { margin-top: 30px; }
   .media-title { grid-template-columns: 35px 100px 1fr; }
   .video-grid { grid-template-columns: 1fr; gap: 38px; }
   .media-list-block { grid-template-columns: 1fr; gap: 30px; }
-  .more-videos { grid-template-columns: 1fr; gap: 24px; margin-top: 55px; }
+  .more-videos { margin-top: 50px; }
+  .more-videos-inner { grid-template-columns: 1fr; gap: 24px; }
   .media-list a { grid-template-columns: 1fr 25px; gap: 8px; }
   .media-list a span { grid-column: 1; }
   .media-list a strong { grid-column: 1; }

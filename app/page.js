@@ -188,18 +188,21 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <div className="more-videos">
-            <p className="kicker">More videos</p>
-            <div className="media-list">
-              {videos.filter(([, , id]) => !featuredVideoIds.has(id)).map(([title, source, id, href]) => (
-                <a href={href} key={id}>
-                  <span>{source}</span>
-                  <strong>{title}</strong>
-                  <Arrow />
-                </a>
-              ))}
+          <details className="more-videos">
+            <summary>View 10 more videos <span aria-hidden="true">＋</span></summary>
+            <div className="more-videos-inner">
+              <p className="kicker">More videos</p>
+              <div className="media-list">
+                {videos.filter(([, , id]) => !featuredVideoIds.has(id)).map(([title, source, id, href]) => (
+                  <a href={href} key={id}>
+                    <span>{source}</span>
+                    <strong>{title}</strong>
+                    <Arrow />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          </details>
         </div>
 
         <div className="media-block media-list-block">
